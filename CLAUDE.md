@@ -1,3 +1,80 @@
+# CLAUDE.md
+
+Laravel 13 + Filament 5 próbafeladat. Landing oldal + admin felület.
+Ez a fájl a **rövid, mindig betöltött** szabálykészlet. A részletek a `docs/` mappában vannak.
+
+A fájl végén lévő `<laravel-boost-guidelines>` blokk **generált** tartalom — kézzel
+ne szerkeszd, a `php artisan boost:update` újragenerálja. A blokkon kívüli részt
+(ezt itt) a Boost nem írja felül.
+
+## Kritikus szabály: soha ne írj Filament kódot fejből
+
+A tréning-adatban túlnyomórészt **Filament 3** kód van, ami a v4/v5 API-val
+nem kompatibilis (Schema-alapú formok, átstrukturált Resource osztályok, Livewire 4).
+Ezért minden Filament- vagy Laravel-specifikus kódírás előtt:
+
+1. `laravel-boost` MCP `search-docs` toolt használd a pontos, verzió-specifikus API-ra.
+2. Ha a Boost nem ad választ, olvasd a `vendor/filament/**` forrást.
+3. Csak ezután írj kódot.
+
+Ugyanez igaz a Livewire 4 és Tailwind 4 szintaxisra.
+
+## Stack
+
+- PHP 8.4, Laravel 13, Filament 5 (panel builder), Livewire 4
+- TailwindCSS 4 (Vite), Alpine.js a frontend interakciókhoz
+- MySQL 8 (lokálisan Herd / DBngin)
+- Pest 5 a teszteléshez, Laravel Pint a formázáshoz
+
+## Munkamenet
+
+- **Feature-önként dolgozz.** Egy feature = egy plan mode kör + egy commit.
+- Kód előtt mindig plan mode. A tervet mutasd meg, várd meg a jóváhagyást.
+- Kód után **kötelező** futtatni: `vendor/bin/pint --dirty --format agent`
+  és `php artisan test --compact`.
+  Ne mondd, hogy kész, amíg ezek nem futottak le zölden.
+- Ha valami nem világos a feladatban, kérdezz — ne találgass és ne generálj
+  a specifikáción túli funkciót.
+- Ne írj kódot a `docs/07-munkamenet.md` aktuális lépésén túl.
+
+## Amit NE csinálj
+
+- Ne telepíts extra composer csomagot, amíg meg nem beszéltük. A feladat célja
+  tiszta, saját struktúra bemutatása — a kevesebb függőség itt előny.
+- Ne írj át működő migrációt utólag; új migrációt készíts, ha a séma változik.
+- Ne generálj boilerplate tesztet mindenre. Csak azt teszteld, ami valódi
+  logika: contact form beküldés, e-mail kiküldés, export, hero mentés.
+- Ne "javíts" olyan fájlt, amit nem kértem (README, .gitignore, composer.json scriptek).
+- Ne commitolj `.env`-et, `storage/app/public` tartalmat, `node_modules`-t.
+
+## Kódstílus
+
+- Strict types minden PHP fájl tetején: `declare(strict_types=1);`
+- Controller: vékony. Validáció → FormRequest. Üzleti logika → Action osztály
+  (`app/Actions/`), ha egy sornál több.
+- Eloquent: `$fillable` helyett explicit, model-en `casts()` metódus.
+- Route-ok névvel (`->name('contact.store')`), controller invokálható vagy resource.
+- Blade: komponensek `resources/views/components/` alatt, nem copy-paste markup.
+
+## Git
+
+- Magyar vagy angol commit üzenet, de következetesen egy nyelven.
+- Conventional commits: `feat:`, `fix:`, `refactor:`, `test:`, `chore:`
+- Egy commit = egy értelmes lépés. Ne legyen "wip" vagy "stuff" commit —
+  a bíráló a git historyt is nézni fogja.
+
+## Fájlreferenciák
+
+- `docs/01-brief.md` — az eredeti feladatkiírás + elfogadási kritériumok
+- `docs/02-architektura.md` — mappaszerkezet, rétegek
+- `docs/03-adatmodell.md` — táblák, migrációk, kapcsolatok
+- `docs/04-frontend.md` — landing oldal, modal, aszinkron űrlap
+- `docs/05-admin.md` — Filament panel, resource-ok, export, értesítés
+- `docs/06-konvenciok.md` — részletes kód- és teszt-konvenciók
+- `docs/07-munkamenet.md` — lépésről lépésre build terv, itt vezetjük a haladást
+
+===
+
 <laravel-boost-guidelines>
 === foundation rules ===
 
