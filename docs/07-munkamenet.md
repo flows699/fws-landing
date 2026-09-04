@@ -36,7 +36,7 @@ Commit: `chore: configure environment, storage link and code style tooling`
 - [x] Seeder: admin user, hero sor, 4-6 minta referencia
 - [x] `php artisan migrate:fresh --seed` hibátlanul lefut
 
-Commit: `feat: add database schema, models, factories and seeders`
+Commit: `9e172d7` — feat: add database schema, models, factories and seeders
 
 ## 3. Filament panel + autentikáció
 
