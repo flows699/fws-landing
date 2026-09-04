@@ -1,0 +1,14 @@
+{
+    "preset": "laravel",
+    "exclude": [
+        "bootstrap",
+        "config",
+        "lang",
+        "public",
+        "storage"
+    ],
+    "rules": {
+        "declare_strict_types": true,
+        "fully_qualified_strict_types": true
+    }
+}

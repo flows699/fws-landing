@@ -21,10 +21,10 @@ Commit: `5fd14bb` + `1a57751` + `5349612`
 
 ## 1. Alap konfiguráció
 
-- [ ] `.env` beállítva (DB, `APP_NAME`, mail driver)
-- [ ] `.env.example` szinkronban
-- [ ] `php artisan storage:link`
-- [ ] Pint konfigurálva, `composer check` script
+- [x] `.env` beállítva (DB, `APP_NAME`, mail driver)
+- [x] `.env.example` szinkronban
+- [x] `php artisan storage:link`
+- [x] Pint konfigurálva, `composer check` script
 
 Commit: `chore: configure environment, storage link and code style tooling`
 
@@ -143,5 +143,6 @@ A kiírás kéri a becsült ráfordítást. Vezesd menet közben, ne utólag bec
 |---|---|---|
 |2026. szeptember 3.  | project setup | 30p |
 |2026. szeptember 4. | dokumentumok megírása, átnézése, javítása | 1 óra |
+|2026. szeptember 4. | 1. lépés: környezet, Pint, composer check | 30p |
 | | | |
 | **Összesen** | | |
