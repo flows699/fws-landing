@@ -72,7 +72,7 @@ Commit: `09cad3d` — feat: add hero section settings page
 - [x] `layout`, `btn`, `header`, `footer` komponensek
 - [ ] Reszponzív ellenőrzés 375 / 768 / 1440 px-en
 
-Commit: `feat: add landing page layout, header and footer`
+Commit: `4ae1efe` — feat: add landing page layout, header and footer
 
 ## 7. Frontend: hero és referencia lista
 
