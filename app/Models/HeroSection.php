@@ -8,6 +8,7 @@ use Database\Factories\HeroSectionFactory;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 #[Fillable([
     'title',
@@ -22,6 +23,20 @@ class HeroSection extends Model
 {
     /** @use HasFactory<HeroSectionFactory> */
     use HasFactory;
+
+    /**
+     * Keep the public disk free of background images no record points to any more.
+     */
+    protected static function booted(): void
+    {
+        static::updating(function (self $heroSection): void {
+            $original = $heroSection->getOriginal('image_path');
+
+            if ($heroSection->isDirty('image_path') && filled($original)) {
+                Storage::disk('public')->delete($original);
+            }
+        });
+    }
 
     /**
      * The single hero section the landing page renders.
