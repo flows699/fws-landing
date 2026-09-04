@@ -9,16 +9,15 @@ Ez az élő dokumentum. Minden lépés végén Claude Code jelölje ki a checkbo
 
 ## 0. Környezet
 
-- [ ] Herd telepítve, PHP 8.4 aktív
-- [ ] MySQL fut, `fws_task` adatbázis létrehozva
-- [ ] `laravel new fws-landing` lefutott
-- [ ] Git repo inicializálva, első commit
-- [ ] `composer require laravel/boost --dev && php artisan boost:install`
-- [ ] `.mcp.json` létrejött, Claude Code látja a `laravel-boost` szervert
-- [ ] Ez a `docs/` mappa és a `CLAUDE.md` bemásolva
-- [ ] Design fájl a `docs/design/` alá bemásolva
+- [x] Herd telepítve, PHP 8.4 aktív
+- [x] MySQL fut, `fws_task` adatbázis létrehozva
+- [x] `laravel new fws-landing` lefutott
+- [x] Git repo inicializálva, első commit
+- [x] `composer require laravel/boost --dev && php artisan boost:install`
+- [x] `.mcp.json` létrejött, Claude Code látja a `laravel-boost` szervert
+- [x] Ez a `docs/` mappa és a `CLAUDE.md` bemásolva
 
-Commit: `chore: initialize laravel project with boost and project docs`
+Commit: `5fd14bb` + `1a57751` + `5349612`
 
 ## 1. Alap konfiguráció
 
