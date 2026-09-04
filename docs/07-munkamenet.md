@@ -49,13 +49,13 @@ Commit: `26500f5` — feat: install filament panel with admin-only access
 
 ## 4. Admin: Referenciák resource
 
-- [ ] `Project` resource teljes CRUD-dal
-- [ ] Borítókép feltöltés `public` diskre
-- [ ] Sorrendezés, publikált szűrő
-- [ ] Kép takarítás törléskor
-- [ ] Teszt: létrehozás menti a rekordot és a fájlt
+- [x] `Project` resource teljes CRUD-dal
+- [x] Borítókép feltöltés `public` diskre
+- [x] Sorrendezés, publikált szűrő
+- [x] Kép takarítás törléskor és cserekor is
+- [x] Teszt: létrehozás menti a rekordot és a fájlt
 
-Commit: `feat: add project resource with cover image upload`
+Commit: `COMMIT_HASH` — feat: add project resource with cover image upload
 
 ## 5. Admin: Hero beállítás oldal
 
@@ -146,5 +146,6 @@ A kiírás kéri a becsült ráfordítást. Vezesd menet közben, ne utólag bec
 |2026. szeptember 4. | 1. lépés: környezet, Pint, composer check | 30p |
 |2026. szeptember 4. | 2. lépés: migrációk, modellek, factory-k, seederek | 45p |
 |2026. szeptember 4. | 3. lépés: Filament panel, admin hozzáférés, branding | 30p |
+|2026. szeptember 4. | 4. lépés: Referenciák resource, képfeltöltés, sorrendezés | |
 | | | |
 | **Összesen** | | |

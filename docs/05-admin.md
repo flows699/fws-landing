@@ -38,22 +38,30 @@ kiindulópont, nem végeredmény.
 **Form:**
 - `title` — required, max 255
 - `slug` — title-ből generálva, szerkeszthető, unique validációval
-- `description` — textarea vagy rich editor
 - `cover_path` — `FileUpload`, `public` disk, `projects` könyvtár, képre korlátozva,
-  méretkorlát (pl. 2 MB), image editor bekapcsolva ha kell arányvágás
-- `url` — nullable, `url` validáció
+  méretkorlát (2 MB), image editor a arányvágáshoz
+- `published_at` — `DatePicker`, required, `Y.m.d` megjelenítés
 - `is_published` — toggle
-- `sort_order` — rejtett, a táblázat reorder kezeli
+- `sort_order` — nincs a formban, a táblázat reorder kezeli
+
+Leírás és külső link mező **nincs**: a design a kártyán csak borítóképet, dátumot és
+címet mutat, ezért a séma sem tartalmaz ilyen oszlopot (lásd `docs/03-adatmodell.md`).
+
+**Fontos:** a `FileUpload` alapból bármilyen fájltípust elfogad, ezért az `image()`
+hívás kötelező. A `FILESYSTEM_DISK` `local`, tehát a `disk('public')` mindenhol
+(feltöltés és `ImageColumn` is) explicit legyen.
 
 **Table:**
 - borítókép thumbnail oszlop
 - cím (kereshető, rendezhető)
-- publikált (boolean ikon, szűrhető)
-- `reorderable('sort_order')` a sorrendezéshez
-- létrehozva (rendezhető, alapból ez szerint desc)
+- megjelenés dátuma (rendezhető, `Y.m.d`)
+- publikált (boolean ikon, `TernaryFilter`-rel szűrhető)
+- `reorderable('sort_order')` a sorrendezéshez, alapból `sort_order` szerint rendezve
 
-**Fontos:** ha egy referenciát törlünk, a borítókép fájlt is takarítsuk el.
-Legegyszerűbb a modell `deleting` event-jén `Storage::disk('public')->delete()`.
+**Fontos:** a borítókép fájlt takarítsuk el, ha a referenciát törlik **vagy** ha a
+képet lecserélik. Mindkettő a modell event-jein megy: `deleting` törli az aktuális
+fájlt, `updating` a lecserélt régit (`isDirty('cover_path')` vizsgálattal, hogy az
+újraseedelés ne törölje ki a saját képét).
 
 ## Resource: Beérkezett üzenetek (`ContactMessage`)
 

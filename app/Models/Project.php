@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Attributes\Scope;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 #[Fillable([
     'title',
@@ -23,6 +24,24 @@ class Project extends Model
 {
     /** @use HasFactory<ProjectFactory> */
     use HasFactory;
+
+    /**
+     * Keep the public disk free of cover images no record points to any more.
+     */
+    protected static function booted(): void
+    {
+        static::updating(function (self $project): void {
+            $original = $project->getOriginal('cover_path');
+
+            if ($project->isDirty('cover_path') && filled($original)) {
+                Storage::disk('public')->delete($original);
+            }
+        });
+
+        static::deleting(function (self $project): void {
+            Storage::disk('public')->delete($project->cover_path);
+        });
+    }
 
     /**
      * Get the attributes that should be cast.
