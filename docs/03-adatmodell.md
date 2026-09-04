@@ -48,7 +48,10 @@ Seeder: egy sor, a designból vett szöveggel és egy placeholder képpel.
 | `sort_order` | `unsignedInteger` default `0` | nem | admin felületen húzható sorrend |
 | timestamps | | | |
 
-Scope: `scopePublished()` → `where('is_published', true)->orderBy('sort_order')`.
+Scope: `published` — Laravel 13-ban `#[Scope]` attribútummal jelölt metódus,
+nem `scopePublished()`. Tartalma: `where('is_published', true)->orderBy('sort_order')`,
+majd `orderByDesc('published_at')`, hogy azonos `sort_order` mellett is
+determinisztikus legyen a sorrend. Hívás: `Project::published()`.
 
 A mezőlista a designhoz ellenőrizve. A kártya **három** adatot mutat:
 borítókép (4:3), dátum, cím. Ügyfélnév, leírás és külső link **nincs** a designban,

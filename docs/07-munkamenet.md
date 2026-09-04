@@ -30,11 +30,11 @@ Commit: `chore: configure environment, storage link and code style tooling`
 
 ## 2. Adatbázis
 
-- [ ] Migrációk: `users.is_admin`, `hero_sections`, `projects`, `contact_messages`
-- [ ] Modellek casts-tel és scope-okkal
-- [ ] Factory-k mindhárom új modellhez
-- [ ] Seeder: admin user, hero sor, 4-6 minta referencia
-- [ ] `php artisan migrate:fresh --seed` hibátlanul lefut
+- [x] Migrációk: `users.is_admin`, `hero_sections`, `projects`, `contact_messages`
+- [x] Modellek casts-tel és scope-okkal
+- [x] Factory-k mindhárom új modellhez
+- [x] Seeder: admin user, hero sor, 4-6 minta referencia
+- [x] `php artisan migrate:fresh --seed` hibátlanul lefut
 
 Commit: `feat: add database schema, models, factories and seeders`
 
@@ -144,5 +144,6 @@ A kiírás kéri a becsült ráfordítást. Vezesd menet közben, ne utólag bec
 |2026. szeptember 3.  | project setup | 30p |
 |2026. szeptember 4. | dokumentumok megírása, átnézése, javítása | 1 óra |
 |2026. szeptember 4. | 1. lépés: környezet, Pint, composer check | 30p |
+|2026. szeptember 4. | 2. lépés: migrációk, modellek, factory-k, seederek | 45p |
 | | | |
 | **Összesen** | | |
