@@ -41,7 +41,9 @@ return [
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
-            'url' => rtrim(env('APP_URL', 'http://localhost'), '/').'/storage',
+            // Relatív URL: a feltöltött képek az aktuális originról jönnek, így
+            // a 127.0.0.1 és a localhost közti váltás nem töri el a képek betöltését.
+            'url' => '/storage',
             'visibility' => 'public',
             'throw' => false,
             'report' => false,

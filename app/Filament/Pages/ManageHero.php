@@ -68,7 +68,9 @@ class ManageHero extends Page
                                 ->disk('public')
                                 ->directory('hero')
                                 ->visibility('public')
-                                ->maxSize(2048),
+                                // A hero teljes szélességű háttérkép, ezért nagyobb a limit,
+                                // mint a referenciák borítóképénél.
+                                ->maxSize(4096),
                         ]),
                     Section::make('Gombok')
                         ->columns(2)
