@@ -55,7 +55,7 @@ Commit: `26500f5` — feat: install filament panel with admin-only access
 - [x] Kép takarítás törléskor és cserekor is
 - [x] Teszt: létrehozás menti a rekordot és a fájlt
 
-Commit: `COMMIT_HASH` — feat: add project resource with cover image upload
+Commit: `27b1674` — feat: add project resource with cover image upload
 
 ## 5. Admin: Hero beállítás oldal
 
