@@ -148,7 +148,7 @@ A kiírás kéri a becsült ráfordítást. Vezesd menet közben, ne utólag bec
 |2026. szeptember 4. | 2. lépés: migrációk, modellek, factory-k, seederek | 45p |
 |2026. szeptember 4. | 3. lépés: Filament panel, admin hozzáférés, branding | 30p |
 |2026. szeptember 4. | 4. lépés: Referenciák resource, képfeltöltés, sorrendezés | 10p |
-|2026. szeptember 4. | 5. lépés: Hero beállítás oldal | |
-|2026. szeptember 5. | 6. lépés: design tokenek, betűtípusok, layout, header, footer | |
+|2026. szeptember 4. | 5. lépés: Hero beállítás oldal | 10p |
+|2026. szeptember 5. | 6. lépés: design tokenek, betűtípusok, layout, header, footer | 20p |
 | | | |
 | **Összesen** | | |
