@@ -40,12 +40,12 @@ Commit: `9e172d7` — feat: add database schema, models, factories and seeders
 
 ## 3. Filament panel + autentikáció
 
-- [ ] `filament:install --panels`
-- [ ] `User implements FilamentUser`, `canAccessPanel()` az `is_admin`-ra
-- [ ] Panel branding a design színeivel
-- [ ] Teszt: admin belép, nem-admin 403
+- [x] `filament:install --panels` (már az `5fd14bb` scaffold commitban lefutott)
+- [x] `User implements FilamentUser`, `canAccessPanel()` az `is_admin`-ra
+- [x] Panel branding a design színeivel (brand név `FÉM`, primary `#6d4bff`)
+- [x] Teszt: admin belép, nem-admin 403, vendég a loginra megy
 
-Commit: `feat: install filament panel with admin-only access`
+Commit: `26500f5` — feat: install filament panel with admin-only access
 
 ## 4. Admin: Referenciák resource
 
@@ -145,5 +145,6 @@ A kiírás kéri a becsült ráfordítást. Vezesd menet közben, ne utólag bec
 |2026. szeptember 4. | dokumentumok megírása, átnézése, javítása | 1 óra |
 |2026. szeptember 4. | 1. lépés: környezet, Pint, composer check | 30p |
 |2026. szeptember 4. | 2. lépés: migrációk, modellek, factory-k, seederek | 45p |
+|2026. szeptember 4. | 3. lépés: Filament panel, admin hozzáférés, branding | 30p |
 | | | |
 | **Összesen** | | |
