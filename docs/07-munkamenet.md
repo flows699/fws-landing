@@ -146,6 +146,6 @@ A kiírás kéri a becsült ráfordítást. Vezesd menet közben, ne utólag bec
 |2026. szeptember 4. | 1. lépés: környezet, Pint, composer check | 30p |
 |2026. szeptember 4. | 2. lépés: migrációk, modellek, factory-k, seederek | 45p |
 |2026. szeptember 4. | 3. lépés: Filament panel, admin hozzáférés, branding | 30p |
-|2026. szeptember 4. | 4. lépés: Referenciák resource, képfeltöltés, sorrendezés | |
+|2026. szeptember 4. | 4. lépés: Referenciák resource, képfeltöltés, sorrendezés | 10p |
 | | | |
 | **Összesen** | | |
