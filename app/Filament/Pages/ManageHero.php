@@ -69,8 +69,10 @@ class ManageHero extends Page
                                 ->directory('hero')
                                 ->visibility('public')
                                 // A hero teljes szélességű háttérkép, ezért nagyobb a limit,
-                                // mint a referenciák borítóképénél.
-                                ->maxSize(4096),
+                                // mint a referenciák borítóképénél. A PHP upload_max_filesize
+                                // és post_max_size ennél nagyobb kell legyen, különben a kérés
+                                // 413-mal elszáll, mielőtt az űrlap hibaüzenetet adhatna.
+                                ->maxSize(3072),
                         ]),
                     Section::make('Gombok')
                         ->columns(2)
