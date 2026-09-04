@@ -44,6 +44,7 @@ resources/
 └── views/
     ├── components/
     │   ├── layout.blade.php
+    │   ├── btn.blade.php
     │   ├── header.blade.php
     │   ├── hero.blade.php
     │   ├── contact-modal.blade.php

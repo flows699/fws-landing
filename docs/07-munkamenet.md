@@ -67,8 +67,9 @@ Commit: `09cad3d` — feat: add hero section settings page
 
 ## 6. Frontend: layout és statikus szekciók
 
-- [ ] Design tokenek beírva a `docs/04-frontend.md`-be és az `app.css` `@theme`-be
-- [ ] `layout`, `header`, `footer` komponensek
+- [x] Design tokenek beírva a `docs/04-frontend.md`-be és az `app.css` `@theme`-be
+- [x] Betűtípusok self-hostolva (`laravel-vite-plugin` `bunny()`, `latin-ext` subsettel)
+- [x] `layout`, `btn`, `header`, `footer` komponensek
 - [ ] Reszponzív ellenőrzés 375 / 768 / 1440 px-en
 
 Commit: `feat: add landing page layout, header and footer`
@@ -148,5 +149,6 @@ A kiírás kéri a becsült ráfordítást. Vezesd menet közben, ne utólag bec
 |2026. szeptember 4. | 3. lépés: Filament panel, admin hozzáférés, branding | 30p |
 |2026. szeptember 4. | 4. lépés: Referenciák resource, képfeltöltés, sorrendezés | 10p |
 |2026. szeptember 4. | 5. lépés: Hero beállítás oldal | |
+|2026. szeptember 5. | 6. lépés: design tokenek, betűtípusok, layout, header, footer | |
 | | | |
 | **Összesen** | | |

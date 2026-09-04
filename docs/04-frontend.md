@@ -122,7 +122,7 @@ vízszintes paddinggel.
 | Variáns | Háttér | Keret | Szöveg | Hol |
 |---|---|---|---|---|
 | Sötét | `ink` | `ink` | fehér | fejléc „Kapcsolat" |
-| Világos | fehér | fehér | `ink` | hero „Kezdjük a tervezést" |
+| Világos | fehér | fehér | `ink` | hero „Projekt megtekintése" |
 | Kontúr (sötét háttéren) | átlátszó | `rgba(255,255,255,.4)` | fehér | hero „A stúdióról" |
 
 Egy Blade komponens (`<x-btn variant="dark">`), három variánssal.
@@ -134,6 +134,9 @@ Egy Blade komponens (`<x-btn variant="dark">`), három variánssal.
 - Tartalom a konténerben balra zárva, 780px széles blokk
 - H1 (max ~803px szélességen tör), bevezető bekezdés 528px szélességen
 - Két gomb egymás mellett, 14px gap
+
+**Javítás:** a világos gomb felirata a designban „Projekt megtekintése",
+nem „Kezdjük a tervezést". A kontúros gombé „A stúdióról".
 
 A scrim a Figmában raszterként van exportálva, tehát a pontos gradiens stopok
 nem olvashatók ki. Közelítés, a rendert nézve:
@@ -178,6 +181,24 @@ jelenjenek meg — tehát ennél többet ne vegyél fel.
 - Alsó sáv: copyright balra, „Adatvédelem" és „Impresszum" jobbra
 
 A footer tartalma a kiírás szerint **statikus**, nem kell adminból szerkeszteni.
+
+### Footer szövegek
+
+A Figmából kiolvasva (footer node `1:106`):
+
+| Hol | Szöveg |
+|---|---|
+| Brand tagline | Ipari formatervező stúdió Budapesten. |
+| „Menü" oszlop | Munkáink · Stúdió · Folyamat · Kapcsolat |
+| „Kapcsolat" oszlop | 1061 Budapest Fém utca 99. · studio@fem.hu · +36 1 234 5678 |
+| Alsó sáv balra | © 2026 FÉM Stúdió — Minden jog fenntartva |
+| Alsó sáv jobbra | Adatvédelem · Impresszum |
+
+A brand oszlop alatti `foot-social` frame a designban üresen renderelődik,
+ezért nem építjük meg.
+
+Színek: a tagline `footer-text`, a menülinkek és a cím `footer-strong`,
+az oszlopcímkék és a copyright `footer-label`, a jogi linkek `footer-muted`.
 
 ## Kapcsolat modal
 
