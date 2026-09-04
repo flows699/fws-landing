@@ -59,11 +59,11 @@ Commit: `27b1674` — feat: add project resource with cover image upload
 
 ## 5. Admin: Hero beállítás oldal
 
-- [ ] `ManageHero` custom page
-- [ ] Mentés + visszajelzés
-- [ ] Régi kép törlése csere esetén
+- [x] `ManageHero` custom page
+- [x] Mentés + visszajelzés
+- [x] Régi kép törlése csere esetén
 
-Commit: `feat: add hero section settings page`
+Commit: `09cad3d` — feat: add hero section settings page
 
 ## 6. Frontend: layout és statikus szekciók
 
@@ -147,5 +147,6 @@ A kiírás kéri a becsült ráfordítást. Vezesd menet közben, ne utólag bec
 |2026. szeptember 4. | 2. lépés: migrációk, modellek, factory-k, seederek | 45p |
 |2026. szeptember 4. | 3. lépés: Filament panel, admin hozzáférés, branding | 30p |
 |2026. szeptember 4. | 4. lépés: Referenciák resource, képfeltöltés, sorrendezés | 10p |
+|2026. szeptember 4. | 5. lépés: Hero beállítás oldal | |
 | | | |
 | **Összesen** | | |
