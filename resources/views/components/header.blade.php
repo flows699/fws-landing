@@ -26,7 +26,10 @@
         </nav>
 
         <div class="flex items-center gap-4">
-            <x-btn variant="dark" href="#kapcsolat" class="hidden sm:inline-flex">Kapcsolat</x-btn>
+            {{-- A wrapperen múlik a rejtés: a btn saját inline-flex osztálya később generálódik, mint a hidden, így azt felülírná. --}}
+            <div class="hidden sm:block">
+                <x-btn variant="dark" href="#kapcsolat">Kapcsolat</x-btn>
+            </div>
 
             {{-- Két külön svg, mert a <template x-if> az svg-n belül foreign contentbe kerül és nem működik. --}}
             <button

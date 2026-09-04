@@ -70,7 +70,7 @@ Commit: `09cad3d` — feat: add hero section settings page
 - [x] Design tokenek beírva a `docs/04-frontend.md`-be és az `app.css` `@theme`-be
 - [x] Betűtípusok self-hostolva (`laravel-vite-plugin` `bunny()`, `latin-ext` subsettel)
 - [x] `layout`, `btn`, `header`, `footer` komponensek
-- [ ] Reszponzív ellenőrzés 375 / 768 / 1440 px-en
+- [x] Reszponzív ellenőrzés 375 / 768 / 1440 px-en
 
 Commit: `4ae1efe` — feat: add landing page layout, header and footer
 
