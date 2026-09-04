@@ -1,0 +1,148 @@
+# 07 — Munkamenet
+
+Ez az élő dokumentum. Minden lépés végén Claude Code jelölje ki a checkboxot
+és írja be a commit hash-t. Ha új session indul, ebből tudja, hol tart.
+
+**Szabály:** egy lépés = egy plan mode kör = egy commit. Ne fusson előre.
+
+---
+
+## 0. Környezet
+
+- [ ] Herd telepítve, PHP 8.4 aktív
+- [ ] MySQL fut, `fws_task` adatbázis létrehozva
+- [ ] `laravel new fws-landing` lefutott
+- [ ] Git repo inicializálva, első commit
+- [ ] `composer require laravel/boost --dev && php artisan boost:install`
+- [ ] `.mcp.json` létrejött, Claude Code látja a `laravel-boost` szervert
+- [ ] Ez a `docs/` mappa és a `CLAUDE.md` bemásolva
+- [ ] Design fájl a `docs/design/` alá bemásolva
+
+Commit: `chore: initialize laravel project with boost and project docs`
+
+## 1. Alap konfiguráció
+
+- [ ] `.env` beállítva (DB, `APP_NAME`, mail driver)
+- [ ] `.env.example` szinkronban
+- [ ] `php artisan storage:link`
+- [ ] Pint konfigurálva, `composer check` script
+
+Commit: `chore: configure environment, storage link and code style tooling`
+
+## 2. Adatbázis
+
+- [ ] Migrációk: `users.is_admin`, `hero_sections`, `projects`, `contact_messages`
+- [ ] Modellek casts-tel és scope-okkal
+- [ ] Factory-k mindhárom új modellhez
+- [ ] Seeder: admin user, hero sor, 4-6 minta referencia
+- [ ] `php artisan migrate:fresh --seed` hibátlanul lefut
+
+Commit: `feat: add database schema, models, factories and seeders`
+
+## 3. Filament panel + autentikáció
+
+- [ ] `filament:install --panels`
+- [ ] `User implements FilamentUser`, `canAccessPanel()` az `is_admin`-ra
+- [ ] Panel branding a design színeivel
+- [ ] Teszt: admin belép, nem-admin 403
+
+Commit: `feat: install filament panel with admin-only access`
+
+## 4. Admin: Referenciák resource
+
+- [ ] `Project` resource teljes CRUD-dal
+- [ ] Borítókép feltöltés `public` diskre
+- [ ] Sorrendezés, publikált szűrő
+- [ ] Kép takarítás törléskor
+- [ ] Teszt: létrehozás menti a rekordot és a fájlt
+
+Commit: `feat: add project resource with cover image upload`
+
+## 5. Admin: Hero beállítás oldal
+
+- [ ] `ManageHero` custom page
+- [ ] Mentés + visszajelzés
+- [ ] Régi kép törlése csere esetén
+
+Commit: `feat: add hero section settings page`
+
+## 6. Frontend: layout és statikus szekciók
+
+- [ ] Design tokenek beírva a `docs/04-frontend.md`-be és az `app.css` `@theme`-be
+- [ ] `layout`, `header`, `footer` komponensek
+- [ ] Reszponzív ellenőrzés 375 / 768 / 1440 px-en
+
+Commit: `feat: add landing page layout, header and footer`
+
+## 7. Frontend: hero és referencia lista
+
+- [ ] `LandingController`, `/` route
+- [ ] `hero` komponens az adatbázisból
+- [ ] `project-card` és a lista
+- [ ] Teszt: landing 200, hero szöveg és publikált referenciák látszanak,
+      nem publikált nem
+
+Commit: `feat: render hero and project list from database`
+
+## 8. Frontend: kapcsolat modal + aszinkron beküldés
+
+- [ ] `contact-modal` komponens (`<dialog>`, fókuszkezelés, ESC)
+- [ ] `StoreContactMessageRequest` magyar hibaüzenetekkel
+- [ ] `ContactMessageController::store()` → JSON
+- [ ] `StoreContactMessage` action
+- [ ] `fetch()` logika: loading, siker, 422, 429, hálózati hiba
+- [ ] `throttle:5,1` a route-on
+- [ ] Tesztek: 201, 422, rate limit
+
+Commit: `feat: add async contact form with validation and rate limiting`
+
+## 9. E-mail értesítés
+
+- [ ] `ContactMessageReceived` queued notification
+- [ ] Reply-To a beküldőre
+- [ ] Link az admin nézetre
+- [ ] Mailpit-tel kézzel ellenőrizve
+- [ ] Teszt: `Notification::fake()`, `assertSentTo`
+
+Commit: `feat: notify admins by email on new contact message`
+
+## 10. Admin: üzenetek listája + export
+
+- [ ] `ContactMessage` read-only resource
+- [ ] Olvasatlan badge a menüben, `read_at` állítás megnyitáskor
+- [ ] Exporter (CSV, ha megy XLSX is)
+- [ ] Kézzel letesztelve futó `queue:work` mellett
+
+Commit: `feat: list and export contact messages in admin`
+
+## 11. Csiszolás
+
+- [ ] Végigkattintás mindkét felületen, mobilon is
+- [ ] Összevetés a designnal
+- [ ] `php artisan test` zöld, `vendor/bin/pint --test` tiszta
+- [ ] Halott kód, kikommentezett rész, `dd()` maradék kitakarítva
+- [ ] Friss klón teszt: `composer install && npm install && npm run build && php artisan migrate --seed`
+
+Commit: `refactor: clean up and align landing page with design`
+
+## 12. Leadás
+
+- [ ] README megírva (lásd `docs/06-konvenciok.md` README szakasz)
+- [ ] Ráfordított idő beírva
+- [ ] `.env` nincs a repóban, `git status` tiszta
+- [ ] Repo feltöltve / elküldve a `karrier@fws.hu`-ra
+
+Commit: `docs: add readme with setup instructions and time log`
+
+---
+
+## Időnapló
+
+A kiírás kéri a becsült ráfordítást. Vezesd menet közben, ne utólag becsüld meg.
+
+| Dátum | Lépés | Idő |
+|---|---|---|
+|2026. szeptember 3.  | project setup | 30p |
+|2026. szeptember 4. | dokumentumok megírása, átnézése, javítása | 1 óra |
+| | | |
+| **Összesen** | | |
