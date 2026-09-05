@@ -112,7 +112,7 @@ Commit: `e6e2365` — feat: notify admins by email on new contact message
 - [x] Olvasatlan badge a menüben, `read_at` állítás megnyitáskor
 - [x] Exporter (CSV és XLSX, képlet-injektálás elleni védelemmel)
 - [x] A `ContactMessageReceived` admin linkje átállítva a resource view URL-jére
-- [ ] Kézzel letesztelve futó `queue:work` mellett
+- [x] Kézzel letesztelve futó `queue:work` mellett
 
 Az export job batchekkel és database notification-nel dolgozik, ezért új
 migráció a `notifications` és az `exports` tábla, a panelen pedig
@@ -162,7 +162,7 @@ A kiírás kéri a becsült ráfordítást. Vezesd menet közben, ne utólag bec
 |2026. szeptember 5. | 6. lépés: design tokenek, betűtípusok, layout, header, footer | 20p |
 |2026. szeptember 5. | 7. lépés: landing controller, hero és referencia lista | 10p |
 |2026. szeptember 5. | 8. lépés: kapcsolat modal, aszinkron beküldés, rate limit | 20p |
-|2026. szeptember 5. | 9. lépés: e-mail értesítés az adminoknak |  |
-|2026. szeptember 5. | 10. lépés: üzenetek resource, olvasatlan badge, export |  |
+|2026. szeptember 5. | 9. lépés: e-mail értesítés az adminoknak | 10p |
+|2026. szeptember 5. | 10. lépés: üzenetek resource, olvasatlan badge, export | 15p |
 | | | |
 | **Összesen** | | |
