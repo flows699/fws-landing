@@ -165,7 +165,7 @@ A generált Laravel README helyére magyar nyelvű leadási dokumentáció kerü
 követelmények, telepítés, admin belépő, queue és Mailpit megjegyzés, ráfordított
 idő, a fontosabb döntések indoklása, projektstruktúra és a teszt-parancsok.
 
-Commit: `docs: add readme with setup instructions and time log`
+Commit: `aedfdb9` — docs: add readme with setup instructions and time log
 
 ---
 
