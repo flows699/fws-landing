@@ -94,7 +94,7 @@ Commit: `a6a100b` — feat: render hero and project list from database
 - [x] `throttle:5,1` a route-on
 - [x] Tesztek: 201, 422, honeypot, rate limit
 
-Commit: `COMMIT_HASH` — feat: add async contact form with validation and rate limiting
+Commit: `a153a50` — feat: add async contact form with validation and rate limiting
 
 ## 9. E-mail értesítés
 
