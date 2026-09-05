@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Notifications;
 
+use App\Filament\Resources\ContactMessages\ContactMessageResource;
 use App\Models\ContactMessage;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -40,7 +41,7 @@ final class ContactMessageReceived extends Notification implements ShouldQueue
             ->line("Feladó: {$this->contactMessage->name} ({$this->contactMessage->email})")
             ->line('Üzenet:')
             ->line($this->contactMessage->message)
-            ->action('Megnyitás az adminban', route('filament.admin.pages.dashboard'))
+            ->action('Megnyitás az adminban', ContactMessageResource::getUrl('view', ['record' => $this->contactMessage]))
             ->salutation('Üdvözlettel, FWS Landing')
             ->replyTo($this->contactMessage->email, $this->contactMessage->name);
     }

@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Filament\Resources\ContactMessages\ContactMessageResource;
 use App\Models\ContactMessage;
 use App\Models\User;
 use App\Notifications\ContactMessageReceived;
@@ -75,4 +76,14 @@ it('notifies the administrators about a new message', function () {
     );
 
     Notification::assertNotSentTo([$visitor], ContactMessageReceived::class);
+});
+
+it('links the notification mail to the message in the admin', function () {
+    $admin = User::factory()->admin()->create();
+    $message = ContactMessage::factory()->create();
+
+    $mail = (new ContactMessageReceived($message))->toMail($admin);
+
+    expect($mail->actionUrl)->toBe(ContactMessageResource::getUrl('view', ['record' => $message]))
+        ->and($mail->replyTo)->toBe([[$message->email, $message->name]]);
 });

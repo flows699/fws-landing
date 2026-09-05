@@ -29,6 +29,7 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
+            ->databaseNotifications()
             ->brandName('FÉM')
             ->favicon(asset('favicon.ico'))
             ->colors([
