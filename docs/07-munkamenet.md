@@ -150,7 +150,7 @@ A kiírás kéri a becsült ráfordítást. Vezesd menet közben, ne utólag bec
 |2026. szeptember 4. | 4. lépés: Referenciák resource, képfeltöltés, sorrendezés | 10p |
 |2026. szeptember 4. | 5. lépés: Hero beállítás oldal | 10p |
 |2026. szeptember 5. | 6. lépés: design tokenek, betűtípusok, layout, header, footer | 20p |
-|2026. szeptember 5. | 7. lépés: landing controller, hero és referencia lista |  |
-|2026. szeptember 5. | 8. lépés: kapcsolat modal, aszinkron beküldés, rate limit |  |
+|2026. szeptember 5. | 7. lépés: landing controller, hero és referencia lista | 10p |
+|2026. szeptember 5. | 8. lépés: kapcsolat modal, aszinkron beküldés, rate limit | 20p |
 | | | |
 | **Összesen** | | |
