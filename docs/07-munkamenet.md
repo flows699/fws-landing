@@ -104,7 +104,7 @@ Commit: `a153a50` — feat: add async contact form with validation and rate limi
 - [x] Mailpit-tel kézzel ellenőrizve
 - [x] Teszt: `Notification::fake()`, `assertSentTo`
 
-Commit: `feat: notify admins by email on new contact message`
+Commit: `e6e2365` — feat: notify admins by email on new contact message
 
 ## 10. Admin: üzenetek listája + export
 
