@@ -183,6 +183,6 @@ A kiírás kéri a becsült ráfordítást. Vezesd menet közben, ne utólag bec
 |2026. szeptember 5. | 8. lépés: kapcsolat modal, aszinkron beküldés, rate limit | 20p |
 |2026. szeptember 5. | 9. lépés: e-mail értesítés az adminoknak | 10p |
 |2026. szeptember 5. | 10. lépés: üzenetek resource, olvasatlan badge, export | 15p |
-|2026. szeptember 5. | 11. lépés: csiszolás, végigkattintás, friss klón teszt |  |
+|2026. szeptember 5. | 11. lépés: csiszolás, végigkattintás, friss klón teszt | 1ó  |
 | | | |
 | **Összesen** | | |
