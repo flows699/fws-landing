@@ -98,11 +98,11 @@ Commit: `a153a50` — feat: add async contact form with validation and rate limi
 
 ## 9. E-mail értesítés
 
-- [ ] `ContactMessageReceived` queued notification
-- [ ] Reply-To a beküldőre
-- [ ] Link az admin nézetre
-- [ ] Mailpit-tel kézzel ellenőrizve
-- [ ] Teszt: `Notification::fake()`, `assertSentTo`
+- [x] `ContactMessageReceived` queued notification
+- [x] Reply-To a beküldőre
+- [x] Link az admin nézetre (egyelőre a panel gyökerére, lásd 10. lépés)
+- [x] Mailpit-tel kézzel ellenőrizve
+- [x] Teszt: `Notification::fake()`, `assertSentTo`
 
 Commit: `feat: notify admins by email on new contact message`
 
@@ -111,6 +111,7 @@ Commit: `feat: notify admins by email on new contact message`
 - [ ] `ContactMessage` read-only resource
 - [ ] Olvasatlan badge a menüben, `read_at` állítás megnyitáskor
 - [ ] Exporter (CSV, ha megy XLSX is)
+- [ ] A `ContactMessageReceived` admin linkje átállítva a resource view URL-jére
 - [ ] Kézzel letesztelve futó `queue:work` mellett
 
 Commit: `feat: list and export contact messages in admin`
@@ -152,5 +153,6 @@ A kiírás kéri a becsült ráfordítást. Vezesd menet közben, ne utólag bec
 |2026. szeptember 5. | 6. lépés: design tokenek, betűtípusok, layout, header, footer | 20p |
 |2026. szeptember 5. | 7. lépés: landing controller, hero és referencia lista | 10p |
 |2026. szeptember 5. | 8. lépés: kapcsolat modal, aszinkron beküldés, rate limit | 20p |
+|2026. szeptember 5. | 9. lépés: e-mail értesítés az adminoknak |  |
 | | | |
 | **Összesen** | | |

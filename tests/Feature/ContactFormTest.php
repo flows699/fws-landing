@@ -3,6 +3,9 @@
 declare(strict_types=1);
 
 use App\Models\ContactMessage;
+use App\Models\User;
+use App\Notifications\ContactMessageReceived;
+use Illuminate\Support\Facades\Notification;
 
 function contactPayload(array $overrides = []): array
 {
@@ -55,4 +58,21 @@ it('rate limits after five submissions in a minute', function () {
     $this->postJson(route('contact.store'), contactPayload())->assertTooManyRequests();
 
     expect(ContactMessage::count())->toBe(5);
+});
+
+it('notifies the administrators about a new message', function () {
+    Notification::fake();
+
+    $admin = User::factory()->admin()->create();
+    $visitor = User::factory()->create();
+
+    $this->postJson(route('contact.store'), contactPayload())->assertCreated();
+
+    Notification::assertSentTo(
+        [$admin],
+        ContactMessageReceived::class,
+        fn (ContactMessageReceived $notification) => $notification->contactMessage->is(ContactMessage::sole())
+    );
+
+    Notification::assertNotSentTo([$visitor], ContactMessageReceived::class);
 });
