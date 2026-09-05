@@ -76,13 +76,13 @@ Commit: `4ae1efe` — feat: add landing page layout, header and footer
 
 ## 7. Frontend: hero és referencia lista
 
-- [ ] `LandingController`, `/` route
-- [ ] `hero` komponens az adatbázisból
-- [ ] `project-card` és a lista
-- [ ] Teszt: landing 200, hero szöveg és publikált referenciák látszanak,
+- [x] `LandingController`, `/` route
+- [x] `hero` komponens az adatbázisból
+- [x] `project-card` és a lista
+- [x] Teszt: landing 200, hero szöveg és publikált referenciák látszanak,
       nem publikált nem
 
-Commit: `feat: render hero and project list from database`
+Commit: `a6a100b` — feat: render hero and project list from database
 
 ## 8. Frontend: kapcsolat modal + aszinkron beküldés
 
@@ -150,5 +150,6 @@ A kiírás kéri a becsült ráfordítást. Vezesd menet közben, ne utólag bec
 |2026. szeptember 4. | 4. lépés: Referenciák resource, képfeltöltés, sorrendezés | 10p |
 |2026. szeptember 4. | 5. lépés: Hero beállítás oldal | 10p |
 |2026. szeptember 5. | 6. lépés: design tokenek, betűtípusok, layout, header, footer | 20p |
+|2026. szeptember 5. | 7. lépés: landing controller, hero és referencia lista |  |
 | | | |
 | **Összesen** | | |
