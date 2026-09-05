@@ -47,6 +47,15 @@ it('keeps the original timestamp of an already read message', function () {
     expect($message->refresh()->read_at->toDateTimeString())->toBe($readAt->toDateTimeString());
 });
 
+it('badges the messages with their read state', function () {
+    $unread = ContactMessage::factory()->create();
+    $read = ContactMessage::factory()->read()->create();
+
+    Livewire::test(ListContactMessages::class)
+        ->assertTableColumnStateSet('status', 'Olvasatlan', $unread)
+        ->assertTableColumnStateSet('status', 'Olvasott', $read);
+});
+
 it('counts only the unread messages in the navigation badge', function () {
     ContactMessage::factory()->count(2)->create();
     ContactMessage::factory()->read()->create();

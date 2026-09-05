@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Filament\Resources\ContactMessages\Tables;
 
 use App\Filament\Exports\ContactMessageExporter;
+use App\Models\ContactMessage;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
@@ -38,11 +39,14 @@ class ContactMessagesTable
                     ->label('Beérkezett')
                     ->dateTime('Y.m.d H:i')
                     ->sortable(),
-                TextColumn::make('read_at')
+                // Olvasatlan üzenetnél a `read_at` null, és a null állapotú oszlopon
+                // a Filament nem futtatja a formázót — ezért a state-et a rekordból
+                // állítjuk elő, különben a badge üresen maradna.
+                TextColumn::make('status')
                     ->label('Állapot')
+                    ->state(fn (ContactMessage $record): string => $record->read_at === null ? 'Olvasatlan' : 'Olvasott')
                     ->badge()
-                    ->formatStateUsing(fn (?string $state): string => $state === null ? 'Olvasatlan' : 'Olvasott')
-                    ->color(fn (?string $state): string => $state === null ? 'warning' : 'gray'),
+                    ->color(fn (string $state): string => $state === 'Olvasatlan' ? 'warning' : 'gray'),
             ])
             ->defaultSort('created_at', 'desc')
             ->filters([
