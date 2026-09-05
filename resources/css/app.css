@@ -38,3 +38,8 @@
 html:has(dialog[open]) {
     overflow: hidden;
 }
+
+/* A Tailwind 4 alapértelmezése a gombokon `cursor: default`, ezt hozzuk vissza. */
+button:not(:disabled) {
+    cursor: pointer;
+}
