@@ -108,13 +108,22 @@ Commit: `e6e2365` — feat: notify admins by email on new contact message
 
 ## 10. Admin: üzenetek listája + export
 
-- [ ] `ContactMessage` read-only resource
-- [ ] Olvasatlan badge a menüben, `read_at` állítás megnyitáskor
-- [ ] Exporter (CSV, ha megy XLSX is)
-- [ ] A `ContactMessageReceived` admin linkje átállítva a resource view URL-jére
+- [x] `ContactMessage` read-only resource
+- [x] Olvasatlan badge a menüben, `read_at` állítás megnyitáskor
+- [x] Exporter (CSV és XLSX, képlet-injektálás elleni védelemmel)
+- [x] A `ContactMessageReceived` admin linkje átállítva a resource view URL-jére
 - [ ] Kézzel letesztelve futó `queue:work` mellett
 
-Commit: `feat: list and export contact messages in admin`
+Az export job batchekkel és database notification-nel dolgozik, ezért új
+migráció a `notifications` és az `exports` tábla, a panelen pedig
+`->databaseNotifications()`. A kész export letöltő linkje ebben az
+értesítésben érkezik, tehát futó `queue:work` nélkül nem készül el.
+
+A sorok kiemelése helyett állapot badge oszlop jelzi az olvasatlan üzenetet:
+a Filament CSS-e előre fordított, egy `recordClasses()`-be írt Tailwind
+osztály nem garantáltan lenne benne a bundle-ben.
+
+Commit: `9d7a7ed` — feat: list and export contact messages in admin
 
 ## 11. Csiszolás
 
@@ -154,5 +163,6 @@ A kiírás kéri a becsült ráfordítást. Vezesd menet közben, ne utólag bec
 |2026. szeptember 5. | 7. lépés: landing controller, hero és referencia lista | 10p |
 |2026. szeptember 5. | 8. lépés: kapcsolat modal, aszinkron beküldés, rate limit | 20p |
 |2026. szeptember 5. | 9. lépés: e-mail értesítés az adminoknak |  |
+|2026. szeptember 5. | 10. lépés: üzenetek resource, olvasatlan badge, export |  |
 | | | |
 | **Összesen** | | |
