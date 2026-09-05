@@ -18,8 +18,8 @@ class HeroSectionSeeder extends Seeder
         $hero = HeroSection::query()->firstOrNew([]);
 
         $hero->fill([
-            'title' => 'Ipari formaterv, ami kibírja a mindennapokat',
-            'subtitle' => 'A FÉM stúdió terméktervezéssel, prototípusgyártással és gyártásfelügyelettel foglalkozik. Az ötlettől a sorozatgyártásig egy csapat visz végig.',
+            'title' => 'Tárgyak, amelyek kiállják az idő próbáját',
+            'subtitle' => 'Letisztult ipari formatervezés a koncepciótól a sorozatgyártásig — felesleges díszítés nélkül.',
             'cta_primary_label' => 'Kezdjük a tervezést',
             'cta_primary_url' => '#kapcsolat',
             'cta_secondary_label' => 'A stúdióról',

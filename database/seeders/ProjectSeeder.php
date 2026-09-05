@@ -17,12 +17,10 @@ class ProjectSeeder extends Seeder
      * @var list<array{title: string, published_at: string}>
      */
     private const PROJECTS = [
-        ['title' => 'Axis munkalámpa', 'published_at' => '2026-06-18'],
-        ['title' => 'Grid moduláris polcrendszer', 'published_at' => '2026-04-02'],
-        ['title' => 'Volta töltőállomás', 'published_at' => '2026-01-27'],
-        ['title' => 'Pilon köztéri pad', 'published_at' => '2025-11-09'],
-        ['title' => 'Nord konyhai eszközcsalád', 'published_at' => '2025-08-21'],
-        ['title' => 'Mono kávéfőző', 'published_at' => '2025-05-14'],
+        ['title' => 'Acél kényelmi eszközök', 'published_at' => '2026-05-28'],
+        ['title' => 'Beltéri szerkezetek és térelválasztók', 'published_at' => '2026-05-14'],
+        ['title' => 'Kültéri építészeti megoldások', 'published_at' => '2026-04-30'],
+        ['title' => 'Egyedi fémszerkezetek', 'published_at' => '2026-04-12'],
     ];
 
     /**
