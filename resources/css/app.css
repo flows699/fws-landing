@@ -11,6 +11,7 @@
     --color-muted: #7c7c84;
     --color-line: #e4e4e0;
     --color-surface: #ececea;
+    --color-danger: #c0392b;
 
     /* Footer (sötét felület) */
     --color-footer-label: #75757e;
@@ -31,4 +32,9 @@
 /* Alpine: a x-show-val rejtett elem ne villanjon fel az Alpine indulása előtt. */
 [x-cloak] {
     display: none !important;
+}
+
+/* Nyitott modal mögött ne görögjön a háttér: a natív <dialog> ezt nem tiltja. */
+html:has(dialog[open]) {
+    overflow: hidden;
 }

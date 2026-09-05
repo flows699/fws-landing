@@ -3,11 +3,12 @@
         ['label' => 'Munkáink', 'href' => '#munkaink'],
         ['label' => 'Stúdió', 'href' => '#studio'],
         ['label' => 'Folyamat', 'href' => '#folyamat'],
-        ['label' => 'Kapcsolat', 'href' => '#kapcsolat'],
     ];
 @endphp
 
-<footer id="kapcsolat" class="bg-ink pt-20 pb-[30px]">
+{{-- A hero CTA-ja adminból a #kapcsolat horgonyra mutathat, ezért marad az id. --}}
+{{-- x-data nélkül az Alpine nem inicializálná a menü Kapcsolat gombjának @click-jét. --}}
+<footer x-data id="kapcsolat" class="bg-ink pt-20 pb-[30px]">
     <div class="mx-auto w-full max-w-container px-5 sm:px-8 lg:px-10">
         <div class="grid gap-12 pb-14 md:grid-cols-[1.7fr_1fr_1fr]">
             <div>
@@ -29,6 +30,17 @@
                             </a>
                         </li>
                     @endforeach
+
+                    {{-- A Kapcsolat menüpont ugyanazt a modalt nyitja, mint a fejléc gombja. --}}
+                    <li>
+                        <button
+                            type="button"
+                            @click="$dispatch('open-contact')"
+                            class="font-sans text-[14.5px] leading-[23.2px] text-footer-strong transition-colors hover:text-white"
+                        >
+                            Kapcsolat
+                        </button>
+                    </li>
                 </ul>
             </div>
 

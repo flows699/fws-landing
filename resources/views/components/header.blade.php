@@ -28,7 +28,7 @@
         <div class="flex items-center gap-4">
             {{-- A wrapperen múlik a rejtés: a btn saját inline-flex osztálya később generálódik, mint a hidden, így azt felülírná. --}}
             <div class="hidden sm:block">
-                <x-btn variant="dark" href="#kapcsolat">Kapcsolat</x-btn>
+                <x-btn variant="dark" @click="$dispatch('open-contact')">Kapcsolat</x-btn>
             </div>
 
             {{-- Két külön svg, mert a <template x-if> az svg-n belül foreign contentbe kerül és nem működik. --}}
@@ -65,7 +65,7 @@
                     {{ $link['label'] }}
                 </a>
             @endforeach
-            <x-btn variant="dark" href="#kapcsolat" class="mt-2 sm:hidden" @click="open = false">Kapcsolat</x-btn>
+            <x-btn variant="dark" class="mt-2 sm:hidden" @click="open = false; $dispatch('open-contact')">Kapcsolat</x-btn>
         </div>
     </nav>
 </header>

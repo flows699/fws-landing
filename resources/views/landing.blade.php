@@ -7,4 +7,6 @@
     </main>
 
     <x-footer />
+
+    <x-contact-modal />
 </x-layout>

@@ -86,15 +86,15 @@ Commit: `a6a100b` — feat: render hero and project list from database
 
 ## 8. Frontend: kapcsolat modal + aszinkron beküldés
 
-- [ ] `contact-modal` komponens (`<dialog>`, fókuszkezelés, ESC)
-- [ ] `StoreContactMessageRequest` magyar hibaüzenetekkel
-- [ ] `ContactMessageController::store()` → JSON
-- [ ] `StoreContactMessage` action
-- [ ] `fetch()` logika: loading, siker, 422, 429, hálózati hiba
-- [ ] `throttle:5,1` a route-on
-- [ ] Tesztek: 201, 422, rate limit
+- [x] `contact-modal` komponens (`<dialog>`, fókuszkezelés, ESC)
+- [x] `StoreContactMessageRequest` magyar hibaüzenetekkel
+- [x] `ContactMessageController::store()` → JSON
+- [x] `StoreContactMessage` action
+- [x] `fetch()` logika: loading, siker, 422, 429, hálózati hiba
+- [x] `throttle:5,1` a route-on
+- [x] Tesztek: 201, 422, honeypot, rate limit
 
-Commit: `feat: add async contact form with validation and rate limiting`
+Commit: `COMMIT_HASH` — feat: add async contact form with validation and rate limiting
 
 ## 9. E-mail értesítés
 
@@ -151,5 +151,6 @@ A kiírás kéri a becsült ráfordítást. Vezesd menet közben, ne utólag bec
 |2026. szeptember 4. | 5. lépés: Hero beállítás oldal | 10p |
 |2026. szeptember 5. | 6. lépés: design tokenek, betűtípusok, layout, header, footer | 20p |
 |2026. szeptember 5. | 7. lépés: landing controller, hero és referencia lista |  |
+|2026. szeptember 5. | 8. lépés: kapcsolat modal, aszinkron beküldés, rate limit |  |
 | | | |
 | **Összesen** | | |
