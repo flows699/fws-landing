@@ -57,32 +57,32 @@ A feladat akkor kész, ha minden pont igaz:
 
 ### Frontend
 
-- [ ] `/` route betölti a landing oldalt, minden szekcióval (header, hero, referenciák, footer)
-- [ ] A hero cím, szöveg és kép az adatbázisból jön, nem hardcode-olt
-- [ ] A referencia lista az adatbázisból jön, borítóképpel
-- [ ] A "Kapcsolat" gomb modalt nyit, ami a design stílusához illik
-- [ ] A modal űrlapja: név, e-mail, üzenet
-- [ ] Beküldés `fetch()`-csel, oldal újratöltés nélkül
-- [ ] Sikeres beküldés után visszajelzés a modalban
-- [ ] Validációs hiba esetén mezőnkénti hibaüzenet, oldal újratöltés nélkül
-- [ ] Az oldal reszponzív (mobil, tablet, desktop)
+- [x] `/` route betölti a landing oldalt, minden szekcióval (header, hero, referenciák, footer)
+- [x] A hero cím, szöveg és kép az adatbázisból jön, nem hardcode-olt
+- [x] A referencia lista az adatbázisból jön, borítóképpel
+- [x] A "Kapcsolat" gomb modalt nyit, ami a design stílusához illik
+- [x] A modal űrlapja: név, e-mail, üzenet
+- [x] Beküldés `fetch()`-csel, oldal újratöltés nélkül
+- [x] Sikeres beküldés után visszajelzés a modalban
+- [x] Validációs hiba esetén mezőnkénti hibaüzenet, oldal újratöltés nélkül
+- [x] Az oldal reszponzív (mobil, tablet, desktop)
 
 ### Admin
 
-- [ ] `/admin` login oldal, Filament alapértelmezett autentikációval
-- [ ] Beérkezett üzenetek listája, olvasható részletnézettel
-- [ ] Új üzenet érkezésekor e-mail megy az adminoknak (queue-n)
-- [ ] Üzenetek exportálhatók (CSV vagy XLSX)
-- [ ] Referenciák: létrehozás, listázás, szerkesztés, törlés
-- [ ] Referencia borítókép feltöltés működik, a kép megjelenik a landing oldalon
-- [ ] Hero beállítás oldal: szöveg és kép módosítható, a változás azonnal látszik a fronton
+- [x] `/admin` login oldal, Filament alapértelmezett autentikációval
+- [x] Beérkezett üzenetek listája, olvasható részletnézettel
+- [x] Új üzenet érkezésekor e-mail megy az adminoknak (queue-n)
+- [x] Üzenetek exportálhatók (CSV vagy XLSX)
+- [x] Referenciák: létrehozás, listázás, szerkesztés, törlés
+- [x] Referencia borítókép feltöltés működik, a kép megjelenik a landing oldalon
+- [x] Hero beállítás oldal: szöveg és kép módosítható, a változás azonnal látszik a fronton
 
 ### Minőség
 
-- [ ] `php artisan test` zöld
-- [ ] `vendor/bin/pint --test` hibátlan
-- [ ] `README.md` tartalmaz: telepítési lépéseket, `.env.example`-t, becsült ráfordított időt
-- [ ] `.env.example` kitöltött, `.env` nincs commitolva
-- [ ] Git history olvasható, értelmes commitokkal
-- [ ] Friss klónon `composer install && npm install && php artisan migrate --seed && npm run build`
+- [x] `php artisan test` zöld
+- [x] `vendor/bin/pint --test` hibátlan
+- [x] `README.md` tartalmaz: telepítési lépéseket, `.env.example`-t, becsült ráfordított időt
+- [x] `.env.example` kitöltött, `.env` nincs commitolva
+- [x] Git history olvasható, értelmes commitokkal
+- [x] Friss klónon `composer install && npm install && php artisan migrate --seed && npm run build`
       után az app működik

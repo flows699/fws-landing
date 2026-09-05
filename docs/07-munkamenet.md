@@ -156,10 +156,14 @@ Commit: `5a40be4` + `f14585a` + `5927c94`
 
 ## 12. Leadás
 
-- [ ] README megírva (lásd `docs/06-konvenciok.md` README szakasz)
-- [ ] Ráfordított idő beírva
-- [ ] `.env` nincs a repóban, `git status` tiszta
+- [x] README megírva (lásd `docs/06-konvenciok.md` README szakasz)
+- [x] Ráfordított idő beírva
+- [x] `.env` nincs a repóban, `git status` tiszta
 - [ ] Repo feltöltve / elküldve a `karrier@fws.hu`-ra
+
+A generált Laravel README helyére magyar nyelvű leadási dokumentáció került:
+követelmények, telepítés, admin belépő, queue és Mailpit megjegyzés, ráfordított
+idő, a fontosabb döntések indoklása, projektstruktúra és a teszt-parancsok.
 
 Commit: `docs: add readme with setup instructions and time log`
 
@@ -184,5 +188,6 @@ A kiírás kéri a becsült ráfordítást. Vezesd menet közben, ne utólag bec
 |2026. szeptember 5. | 9. lépés: e-mail értesítés az adminoknak | 10p |
 |2026. szeptember 5. | 10. lépés: üzenetek resource, olvasatlan badge, export | 15p |
 |2026. szeptember 5. | 11. lépés: csiszolás, végigkattintás, friss klón teszt | 1ó  |
+|2026. szeptember 5. | 12. lépés: README, leadás | |
 | | | |
-| **Összesen** | | |
+| **Összesen** | | kb. 6 óra |
