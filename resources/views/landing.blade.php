@@ -1,7 +1,10 @@
 <x-layout>
     <x-header />
 
-    <main id="munkaink"></main>
+    <main>
+        <x-hero :hero="$hero" />
+        <x-projects :projects="$projects" />
+    </main>
 
     <x-footer />
 </x-layout>
