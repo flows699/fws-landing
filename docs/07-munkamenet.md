@@ -188,6 +188,5 @@ A kiírás kéri a becsült ráfordítást. Vezesd menet közben, ne utólag bec
 |2026. szeptember 5. | 9. lépés: e-mail értesítés az adminoknak | 10p |
 |2026. szeptember 5. | 10. lépés: üzenetek resource, olvasatlan badge, export | 15p |
 |2026. szeptember 5. | 11. lépés: csiszolás, végigkattintás, friss klón teszt | 1ó  |
-|2026. szeptember 5. | 12. lépés: README, leadás | |
-| | | |
+|2026. szeptember 5. | 12. lépés: README, leadás | 30p |
 | **Összesen** | | kb. 6 óra |
