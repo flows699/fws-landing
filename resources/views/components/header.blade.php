@@ -38,7 +38,6 @@
                 :aria-expanded="open ? 'true' : 'false'"
                 :aria-label="open ? 'Navigáció bezárása' : 'Navigáció megnyitása'"
                 aria-controls="mobile-nav"
-                aria-label="Navigáció megnyitása"
                 class="flex h-[43px] w-[43px] items-center justify-center border border-line text-ink lg:hidden"
             >
                 <svg x-show="! open" class="h-4 w-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true">

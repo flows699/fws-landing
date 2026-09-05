@@ -20,8 +20,8 @@ class HeroSectionSeeder extends Seeder
         $hero->fill([
             'title' => 'Tárgyak, amelyek kiállják az idő próbáját',
             'subtitle' => 'Letisztult ipari formatervezés a koncepciótól a sorozatgyártásig — felesleges díszítés nélkül.',
-            'cta_primary_label' => 'Kezdjük a tervezést',
-            'cta_primary_url' => '#kapcsolat',
+            'cta_primary_label' => 'Projekt megtekintése',
+            'cta_primary_url' => '#munkaink',
             'cta_secondary_label' => 'A stúdióról',
             'cta_secondary_url' => '#studio',
             'image_path' => $this->copyImage(),

@@ -18,6 +18,11 @@ Alpine.data('contactForm', () => ({
         this.$refs.dialog.close();
     },
 
+    /** Javítás közben tűnjön el a mező hibája, ne csak a következő beküldéskor. */
+    clearError(field) {
+        delete this.errors[field];
+    },
+
     /** A <dialog> ESC-re és backdrop kattintásra is ezen az eseményen keresztül zár. */
     onClose() {
         this.$refs.form.reset();

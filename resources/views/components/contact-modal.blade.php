@@ -32,6 +32,7 @@
             action="{{ route('contact.store') }}"
             method="post"
             @submit.prevent="submit()"
+            @input="clearError($event.target.name)"
             class="mt-8 space-y-6"
             novalidate
         >

@@ -42,7 +42,7 @@ final class ContactMessageReceived extends Notification implements ShouldQueue
             ->line('Üzenet:')
             ->line($this->contactMessage->message)
             ->action('Megnyitás az adminban', ContactMessageResource::getUrl('view', ['record' => $this->contactMessage]))
-            ->salutation('Üdvözlettel, FWS Landing')
+            ->salutation('Üdvözlettel, '.config('app.name'))
             ->replyTo($this->contactMessage->email, $this->contactMessage->name);
     }
 }

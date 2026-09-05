@@ -280,8 +280,12 @@ A design csak desktopot ad, tehát ez saját levezetés. Töréspontok:
 |---|---|---|---|---|
 | < 640px | px-5 | 1 oszlop | 36px | 28px |
 | 640–1023px | px-8 | 2 oszlop | 44px | 34px |
-| 1024–1439px | px-10 | 3 oszlop | 54px | 38px |
-| ≥ 1440px | max-w-[1536px] px-10 | 4 oszlop | 66px | 44px |
+| 1024–1279px | px-10 | 3 oszlop | 54px | 38px |
+| ≥ 1280px | max-w-[1536px] px-10 | 4 oszlop | 66px | 44px |
+
+A töréspontok a Tailwind alapértelmezései (`sm` 640, `lg` 1024, `xl` 1280),
+saját `min-[...]` variáns nélkül. A negyedik oszlop így már 1280px-en megjelenik,
+1536px-es konténerrel a kártya a designbeli 361.5px-et kapja.
 
 A negatív betűközt kisebb méreteknél arányosan csökkentsd (`-0.02em` konstans
 jobban skálázódik, mint a fix px érték).

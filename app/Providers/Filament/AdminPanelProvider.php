@@ -31,7 +31,7 @@ class AdminPanelProvider extends PanelProvider
             ->login()
             ->databaseNotifications()
             ->brandName('FÉM')
-            ->favicon(asset('favicon.ico'))
+            ->favicon(asset('favicon.svg'))
             ->colors([
                 'primary' => '#6d4bff',
                 'gray' => Color::Zinc,
