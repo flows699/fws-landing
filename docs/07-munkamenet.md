@@ -127,13 +127,32 @@ Commit: `9d7a7ed` — feat: list and export contact messages in admin
 
 ## 11. Csiszolás
 
-- [ ] Végigkattintás mindkét felületen, mobilon is
-- [ ] Összevetés a designnal
-- [ ] `php artisan test` zöld, `vendor/bin/pint --test` tiszta
-- [ ] Halott kód, kikommentezett rész, `dd()` maradék kitakarítva
-- [ ] Friss klón teszt: `composer install && npm install && npm run build && php artisan migrate --seed`
+- [x] Végigkattintás mindkét felületen, mobilon is
+- [x] Összevetés a designnal
+- [x] `php artisan test` zöld (28 teszt), `vendor/bin/pint --test` tiszta
+- [x] Halott kód, kikommentezett rész, boilerplate teszt kitakarítva
+- [x] Friss klón teszt: `composer install && npm install && npm run build && php artisan migrate --seed`
 
-Commit: `refactor: clean up and align landing page with design`
+A landing 375 / 768 / 1200 / 1500 px-en lett átnézve, az admin desktopon és
+375 px-en. Ami a végigkattintáson kiderült:
+
+- A modal validációs hibája addig kint maradt, amíg a látogató javította a
+  mezőt. Most `@input`-ra tűnik el az adott mező hibája.
+- Az üzenetlista állapot badge-e üresen maradt az olvasatlan sorokon: a
+  Filament nem futtatja a formázót `null` state-en. A `state()` most a
+  rekordból számol, és teszt is fedi.
+- Az `lang/hu` hiánya miatt a keretrendszer validációs üzenetei angolul
+  jöttek volna, az export modal két gombja pedig hiányzik a csomag magyar
+  fordításából. Mindkettőre van most fordítás.
+- A hero elsődleges gombja a designban „Projekt megtekintése" — a seeder
+  ezt kapta, és az élő rekord is át lett állítva az admin felületről.
+- A `favicon.ico` nulla bájtos volt, helyette `favicon.svg` a landingon és
+  a panelen is.
+
+A `docs/04-frontend.md` reszponzív táblázata a Tailwind alapértelmezett
+töréspontjaira lett igazítva (a negyedik oszlop 1280px-től, nem 1440-től).
+
+Commit: `5a40be4` + `f14585a` + `5927c94`
 
 ## 12. Leadás
 
@@ -164,5 +183,6 @@ A kiírás kéri a becsült ráfordítást. Vezesd menet közben, ne utólag bec
 |2026. szeptember 5. | 8. lépés: kapcsolat modal, aszinkron beküldés, rate limit | 20p |
 |2026. szeptember 5. | 9. lépés: e-mail értesítés az adminoknak | 10p |
 |2026. szeptember 5. | 10. lépés: üzenetek resource, olvasatlan badge, export | 15p |
+|2026. szeptember 5. | 11. lépés: csiszolás, végigkattintás, friss klón teszt |  |
 | | | |
 | **Összesen** | | |
