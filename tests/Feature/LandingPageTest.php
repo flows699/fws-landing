@@ -46,3 +46,14 @@ it('hides unpublished projects', function () {
 it('renders without a hero row', function () {
     $this->get(route('landing'))->assertOk();
 });
+
+it('turns a hero cta pointing at the contact anchor into a modal trigger', function () {
+    HeroSection::factory()->create([
+        'cta_primary_label' => 'Kezdjük a tervezést',
+        'cta_primary_url' => '#kapcsolat',
+    ]);
+
+    $this->get(route('landing'))
+        ->assertOk()
+        ->assertSee('@click="$dispatch(\'open-contact\')">Kezdjük a tervezést', escape: false);
+});

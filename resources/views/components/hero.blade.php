@@ -26,15 +26,23 @@
                 </p>
             @endif
 
-            @if (filled($hero->cta_primary_label) || filled($hero->cta_secondary_label))
-                <div class="mt-10 flex flex-wrap gap-[14px]">
-                    @if (filled($hero->cta_primary_label))
-                        <x-btn variant="light" :href="$hero->cta_primary_url ?? '#'">{{ $hero->cta_primary_label }}</x-btn>
-                    @endif
+            @php
+                $ctas = array_filter([
+                    ['variant' => 'light', 'label' => $hero->cta_primary_label, 'url' => $hero->cta_primary_url],
+                    ['variant' => 'outline', 'label' => $hero->cta_secondary_label, 'url' => $hero->cta_secondary_url],
+                ], fn (array $cta): bool => filled($cta['label']));
+            @endphp
 
-                    @if (filled($hero->cta_secondary_label))
-                        <x-btn variant="outline" :href="$hero->cta_secondary_url ?? '#'">{{ $hero->cta_secondary_label }}</x-btn>
-                    @endif
+            @if ($ctas !== [])
+                {{-- A #kapcsolat cím a modalt nyitja, minden más URL sima horgony vagy link marad. --}}
+                <div x-data class="mt-10 flex flex-wrap gap-[14px]">
+                    @foreach ($ctas as $cta)
+                        @if ($cta['url'] === '#kapcsolat')
+                            <x-btn :variant="$cta['variant']" @click="$dispatch('open-contact')">{{ $cta['label'] }}</x-btn>
+                        @else
+                            <x-btn :variant="$cta['variant']" :href="$cta['url'] ?? '#'">{{ $cta['label'] }}</x-btn>
+                        @endif
+                    @endforeach
                 </div>
             @endif
         </div>
